@@ -1,10 +1,18 @@
 language: node_js
 node_js:
-  - 10.13.0
+- 10.13.0
 install:
-  - npm install
+- npm install
 script:
-  - npm run test
+- npm run test
 branches:
   only:
-    - main
+  - main
+  - dev
+deploy:
+  provider: heroku
+  api_key:
+    secure: PnGl2OZKZMDZ/hOe0y+g7q5XeJeMg6t99S7hh7yZTAVInCPFqTFIl3LQiOFvCe5DjsuuTfFxJL3JyrSQvUuc6Z48fS67M0izUH0vnNQ9bFQT9j3B1eDhk8Rp7Tdzok4OnIuRKoYh+9qav75R+nxL9uT7m/N3bHfvrWqpPmtev+nDcdPNP5A5wBBZKqf+kVXWc129rjiICkinBy7GTig96NsPo5cTKUxbqXBTLbEU6RuyHftFYKeJ3HB0DNyt8xpGkMYhNvvIUKZIphCYyTMowlk+N4wBJ8BkF9psqWCHSrmasl2wznT4F9MVP/19VBoZxtvT0/yk38sXzE3PI8HcRuQvFPOThFG19kpiH+YSGW6gFV5D1bD8I0YEfbmYgoo0a52FqcpnLvLysozaR8cEAEBVkk9l+ClKtiwT3RLo9eWmGFEsYaelSKp+88NFsK93e+VbXJwXkGzqbRB+WSCxH2QtFBP6R/EqO4nKE2m+qUhEZkP3btTTBx1IwnKHcHuU22sPyiWgfNEPtMzWDRKybe8GBjqUGjdeATcCG88zRe+iC3JIv2aHkGk0MJXTCO2zxUF0JQ2XZG+dcFVA/ryTAMnDBIi1ZknaPShVOkzkjyp7g5xo35V1k/VqCmlsnrzVuKqRtjkTdnrnxYAsVrGmtc1lXesyTlkqSPUuhpO0bsQ=
+  app:
+    master: ci-cd-levelup
+    dev: ci-cd-levelup-staging
